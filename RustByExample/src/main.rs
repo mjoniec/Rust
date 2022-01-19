@@ -1,3 +1,6 @@
+mod _1_hello_world;
+use _1_hello_world::say_hello;
+
 fn main() {
-    println!("Hello, world!");
+    say_hello();
 }

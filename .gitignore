@@ -1,2 +1,7 @@
 /hello-rust/target
 /hello-rust/Cargo.lock
+/RustByExample/src/.vs
+/RustByExample/src/main.pdb
+/RustByExample/src/main.exe
+/RustByExample/target
+/RustByExample/Cargo.lock

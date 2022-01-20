@@ -6,6 +6,7 @@ use rbe_1_hello_world::debug;
 
 fn main() {
     rbe_1_hello_world(); 
+    rbe_2_primitives();
 }
 
 fn rbe_1_hello_world() {
@@ -13,4 +14,11 @@ fn rbe_1_hello_world() {
     comment();
     formatted_print();
     debug();
+}
+
+mod rbe_2_primitives;
+use rbe_2_primitives::primitives;
+
+fn rbe_2_primitives(){
+    primitives();
 }

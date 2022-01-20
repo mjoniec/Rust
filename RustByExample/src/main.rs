@@ -1,8 +1,8 @@
-mod _1_hello_world;
-use _1_hello_world::say_hello;
-use _1_hello_world::comment;
-use _1_hello_world::formatted_print;
-use _1_hello_world::debug;
+mod rbe_1_hello_world;
+use rbe_1_hello_world::say_hello;
+use rbe_1_hello_world::comment;
+use rbe_1_hello_world::formatted_print;
+use rbe_1_hello_world::debug;
 
 fn main() {
     say_hello();

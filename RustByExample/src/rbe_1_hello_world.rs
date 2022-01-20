@@ -6,6 +6,7 @@ pub fn comment(){
     let x = 5 + /* 90 + */ 5;
     println!("Is `x` 10 or 100? x = {}", x);
 }
+
 pub fn formatted_print(){
     // In general, the `{}` will be automatically replaced with any
     // arguments. These will be stringified.
@@ -93,4 +94,28 @@ pub fn debug(){
 
     //??? 'ugly print - meaning whole class in in one line 
     println!("{:?}", peter);
+}
+
+// Import (via `use`) the `fmt` module to make it available.
+use std::fmt;
+
+// Define a structure for which `fmt::Display` will be implemented. This is
+// a tuple struct named `Structure` that contains an `i32`.
+struct Structure2(i32);
+
+// To use the `{}` marker, the trait `fmt::Display` must be implemented
+// manually for the type.
+impl fmt::Display for Structure2 {
+    // This trait requires `fmt` with this exact signature.
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        // Write strictly the first element into the supplied output
+        // stream: `f`. Returns `fmt::Result` which indicates whether the
+        // operation succeeded or failed. Note that `write!` uses syntax which
+        // is very similar to `println!`.
+        write!(f, "{}", self.0)
+    }
+}
+//TODO continue Display
+pub fn display(){
+
 }

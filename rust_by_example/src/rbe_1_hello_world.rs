@@ -70,6 +70,7 @@ struct Person<'a> {
     age: u8
 }
 
+
 pub fn debug(){
     // Printing with `{:?}` is similar to with `{}`.
     println!("{:?} months in a year.", 12);
@@ -94,6 +95,9 @@ pub fn debug(){
 
     //??? 'ugly print - meaning whole class in in one line 
     println!("{:?}", peter);
+
+    //mute these warnings from tutorial on build cmd
+    println!("{:?} {:?}", peter.name, peter.age);
 }
 
 // Import (via `use`) the `fmt` module to make it available.
@@ -116,6 +120,6 @@ impl fmt::Display for Structure2 {
     }
 }
 //TODO continue Display
-pub fn display(){
+// pub fn display(){
 
-}
+// }

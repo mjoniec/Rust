@@ -5,3 +5,8 @@
 /RustByExample/src/main.exe
 /RustByExample/target
 /RustByExample/Cargo.lock
+/rust_by_example/target
+/rust_by_example/Cargo.lock
+/rust_by_example/src/main.pdb
+/rust_by_example/src/main.exe
+/.vs

@@ -18,7 +18,11 @@ fn rbe_1_hello_world() {
 
 mod rbe_2_primitives;
 use rbe_2_primitives::primitives;
+use rbe_2_primitives::literals_and_operators;
+use rbe_2_primitives::tuple;
 
 fn rbe_2_primitives(){
     primitives();
+    literals_and_operators();
+    tuple();
 }

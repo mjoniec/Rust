@@ -20,9 +20,11 @@ mod rbe_2_primitives;
 use rbe_2_primitives::primitives;
 use rbe_2_primitives::literals_and_operators;
 use rbe_2_primitives::tuple;
+use rbe_2_primitives::arrays_and_slices;
 
 fn rbe_2_primitives(){
     primitives();
     literals_and_operators();
     tuple();
+    arrays_and_slices();
 }

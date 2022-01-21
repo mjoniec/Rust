@@ -122,3 +122,43 @@ pub fn transpose(matrix: Matrix) -> Matrix{
   let m = Matrix (matrix.0, matrix.2, matrix.1, matrix.3);
   m
 }
+
+use std::mem;
+
+// This function borrows a slice
+fn analyze_slice(slice: &[i32]) {
+    println!("first element of the slice: {}", slice[0]);
+    println!("the slice has {} elements", slice.len());
+}
+
+pub fn arrays_and_slices(){
+  // Fixed-size array (type signature is superfluous)
+  let array5: [i32; 5] = [1, 2, 3, 4, 5];
+
+  // All elements can be initialized to the same value
+  let array500: [i32; 500] = [0; 500];
+
+  // Indexing starts at 0
+  println!("first element of the array: {}", array5[0]);
+  println!("second element of the array: {}", array5[1]);
+
+  // `len` returns the count of elements in the array
+  println!("number of elements in array: {}", array5.len());
+
+  // Arrays are stack allocated
+  println!("array occupies {} bytes", mem::size_of_val(&array5));
+
+  // Arrays can be automatically borrowed as slices
+  println!("borrow the whole array as a slice");
+  analyze_slice(&array5);
+
+  // Slices can point to a section of an array
+  // They are of the form [starting_index..ending_index]
+  // starting_index is the first position in the slice
+  // ending_index is one more than the last position in the slice
+  println!("borrow a section of the array as a slice");
+  analyze_slice(&array500[1 .. 4]);
+
+  // Out of bound indexing causes compile error
+  //println!("{}", xs[5]);
+}

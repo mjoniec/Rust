@@ -42,7 +42,7 @@ pub fn structures(){
 
     // Make a new point by using struct update syntax to use the fields of our
     // other one
-    let bottom_right = Point { x: 5.2, ..point };
+    let bottom_right = Point { y: 3.3, ..point };
 
     // `bottom_right.y` will be the same as `point.y` because we used that field
     // from `point`
@@ -51,10 +51,11 @@ pub fn structures(){
     // Destructure the point using a `let` binding
     let Point { x: left_edge, y: top_edge } = point;
 
-    let _rectangle = Rectangle {
+    let bottom_right2 = Point { x:12.1, y: 3.3 };
+    let rectangle = Rectangle {
         // struct instantiation is an expression too
         top_left: Point { x: left_edge, y: top_edge },
-        bottom_right: bottom_right,
+        bottom_right: bottom_right2,
     };
 
     // Instantiate a unit struct
@@ -67,7 +68,29 @@ pub fn structures(){
     println!("pair contains {:?} and {:?}", pair.0, pair.1);
 
     // Destructure a tuple struct
-    let Pair(integer, decimal) = pair;
+    let Pair(i, d) = pair;
 
-    println!("pair contains {:?} and {:?}", integer, decimal);
+    println!("pair contains {:?} and {:?}", i, d);
+
+    println!("rect area {:?}", rect_area(rectangle));
+    println!("square area {:?}", rect_area(square(point, 2.2)));
+}
+
+fn rect_area(rectangle: Rectangle) -> f32{
+    let Rectangle{top_left, bottom_right} = rectangle;
+    let width = bottom_right.x - top_left.x;
+    let height = bottom_right.y - top_left.y;
+
+    width * height
+}
+
+fn square(point: Point, width: f32) -> Rectangle{
+    let rectangle: Rectangle = Rectangle {
+        top_left: Point {..point},
+        bottom_right: Point{
+            x: point.x + width,
+            y: point.y + width
+        }
+    };
+    rectangle
 }

@@ -1,13 +1,14 @@
+fn main() {
+    rbe_1_hello_world(); 
+    rbe_2_primitives();
+    rbe_3_custom_types();
+}
+
 mod rbe_1_hello_world;
 use rbe_1_hello_world::say_hello;
 use rbe_1_hello_world::comment;
 use rbe_1_hello_world::formatted_print;
 use rbe_1_hello_world::debug;
-
-fn main() {
-    rbe_1_hello_world(); 
-    rbe_2_primitives();
-}
 
 fn rbe_1_hello_world() {
     say_hello();
@@ -27,4 +28,11 @@ fn rbe_2_primitives(){
     literals_and_operators();
     tuple();
     arrays_and_slices();
+}
+
+mod rbe_3_custom_types;
+use rbe_3_custom_types::structures;
+
+fn rbe_3_custom_types(){
+    structures();
 }

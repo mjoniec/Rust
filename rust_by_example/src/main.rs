@@ -32,7 +32,9 @@ fn rbe_2_primitives(){
 
 mod rbe_3_custom_types;
 use rbe_3_custom_types::structures;
+use rbe_3_custom_types::enums;
 
 fn rbe_3_custom_types(){
     structures();
+    enums();
 }

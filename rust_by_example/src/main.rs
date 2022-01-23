@@ -35,10 +35,13 @@ use rbe_3_custom_types::structures;
 use rbe_3_custom_types::enums;
 //use rbe_3_custom_types::use_test;
 use rbe_3_custom_types::c_like_enums;
+// use rbe_3_custom_types::linked_list_via_enums;
+use rbe_3_custom_types::constants;
 
 fn rbe_3_custom_types(){
     structures();
     enums();
     //use_test();
     c_like_enums();
+    constants();
 }

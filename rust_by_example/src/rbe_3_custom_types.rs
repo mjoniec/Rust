@@ -17,7 +17,7 @@ struct Point {
 }
 
 // Structs can be reused as fields of another struct
-#[allow(dead_code)]
+//#[allow(dead_code)]
 struct Rectangle {
     // A rectangle can be specified by where the top left and bottom right
     // corners are in space.
@@ -159,6 +159,7 @@ enum VeryVerboseEnumOfThingsToDoWithNumbers {
 // Creates a type alias
 type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
 
+//The most common place you'll see aliases is in impl blocks using the Self alias.
 impl VeryVerboseEnumOfThingsToDoWithNumbers {
     fn run(&self, x: i32, y: i32) -> i32 {
         match self {
@@ -166,4 +167,70 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
             Self::Subtract => x - y,
         }
     }
+}
+
+//lesson badly prepared 3.2.1
+// An attribute to hide warnings for unused code.
+//#![allow(dead_code)]
+
+// enum Status {
+//     Rich,
+//     Poor,
+// }
+
+// enum Work {
+//     Civilian,
+//     Soldier,
+// }
+
+// fn use_test(){
+//     // Explicitly `use` each name so they are available without
+//     // manual scoping.
+//     use crate::Status::{Poor, Rich};
+//     // Automatically `use` each name inside `Work`.
+//     use crate::Work::*;
+
+//     // Equivalent to `Status::Poor`.
+//     let status = Poor;
+//     // Equivalent to `Work::Civilian`.
+//     let work = Civilian;
+
+//     match status {
+//         // Note the lack of scoping because of the explicit `use` above.
+//         Rich => println!("The rich have lots of money!"),
+//         Poor => println!("The poor have no money..."),
+//     }
+
+//     match work {
+//         // Note again the lack of scoping.
+//         Civilian => println!("Civilians work!"),
+//         Soldier  => println!("Soldiers fight!"),
+//     }
+// }
+
+// enum with implicit discriminator (starts at 0)
+
+//3.2.2 enum can also be used as C-like enums
+enum Number {
+    Zero,
+    One,
+    Two,
+}
+
+// enum with explicit discriminator
+enum Color {
+    Red = 0xff0000,
+    Green = 0x00ff00,
+    Blue = 0x0000ff,
+}
+
+pub fn c_like_enums(){
+    // `enums` can be cast as integers.
+    println!("zero is {}", Number::Zero as i32);
+    println!("one is {}", Number::One as i32);
+    println!("two is {}", Number::Two as i32);
+
+    println!("roses are #{:06x}", Color::Red as i32);
+    println!("violets are #{:06x}", Color::Blue as i32);
+    println!("green #{:06x}", Color::Green as i32);
 }

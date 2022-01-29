@@ -2,6 +2,7 @@ fn main() {
     rbe_1_hello_world(); 
     rbe_2_primitives();
     rbe_3_custom_types();
+    rbe_4_variable_bindings();
 }
 
 mod rbe_1_hello_world;
@@ -44,4 +45,11 @@ fn rbe_3_custom_types(){
     //use_test();
     c_like_enums();
     constants();
+}
+
+mod rbe_4_variable_binding;
+use rbe_4_variable_binding::bindings;
+
+fn rbe_4_variable_bindings(){
+    bindings();
 }

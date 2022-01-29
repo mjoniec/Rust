@@ -49,7 +49,9 @@ fn rbe_3_custom_types(){
 
 mod rbe_4_variable_binding;
 use rbe_4_variable_binding::bindings;
+use rbe_4_variable_binding::mutability;
 
 fn rbe_4_variable_bindings(){
     bindings();
+    mutability();
 }

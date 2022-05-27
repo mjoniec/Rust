@@ -2,6 +2,8 @@
 // fn main() {
 //     println!("Hello, world!");
 // }
+// rustc main.rs
+// ./main
 
 // test 2
 use ferris_says::say;
@@ -15,3 +17,4 @@ fn main() {
     let mut writer = BufWriter::new(stdout.lock());
     say(message.as_bytes(), width, &mut writer).unwrap();
 }
+// cargo run

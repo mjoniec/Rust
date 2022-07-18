@@ -12,3 +12,7 @@
 /.vs
 /hello-rust/src/main.pdb
 /hello-rust/src/main.exe
+/leet_code/src/main.pdb
+/leet_code/src/main.exe
+/leet_code/target
+/leet_code/Cargo.lock

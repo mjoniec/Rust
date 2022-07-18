@@ -18,7 +18,9 @@ impl Solution {
     }
 }
 
-fn run() {
+pub fn run() {
+    println!("testing");
+
     let mut vec1 = vec![1, 2, 3, 0, 0, 0];
     let mut vec2 = vec![2, 5, 6];
     Solution::merge(&mut vec1, 3, &mut vec2, 3);

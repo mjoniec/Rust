@@ -12,11 +12,11 @@ impl Solution {
         let mut letters_counter: [usize;128] = [0;128]; //store number of occurences of each letter inside sliding window CURRENTLY in loop
 
         while right < s_chars.len() {
-            let current_letter_ascii = s_chars[right] as usize;            
-            letters_counter[current_letter_ascii] += 1;
+            letters_counter[s_chars[right] as usize] += 1;//increment letter pointed by right
+            let current_max_letter_occurences = letters_counter.iter().max().unwrap();
 
-            if letters_counter[current_letter_ascii] + k as usize <= right - left {//impossible to have the same letter in window - we need to shrink it
-                //println!("overflow at left: {:?} right: {:?} ", left, right);
+            if *current_max_letter_occurences + (k as usize) < right - left + 1{//impossible to have the same letter in window - we need to shrink it
+                //println!("overflow at left: {:?} right: {:?} k: {:?} current max letter: {:?}", left, right, k, *current_max_letter_occurences);
                 letters_counter[s_chars[left] as usize] -= 1;
                 left += 1;
             }
@@ -35,8 +35,9 @@ impl Solution {
 
 pub fn run() {
     println!("testing s0424_longest_repeating_character_replacement");
+    assert_eq!(Solution::character_replacement("BAAAB".to_string(), 2), 5);
     assert_eq!(Solution::character_replacement("ABB".to_string(), 2), 3);
     assert_eq!(Solution::character_replacement("ABBAA".to_string(), 2), 5);
-    assert_eq!(Solution::character_replacement("ABCDDDABCEFGHIJK".to_string(), 2), 5);
+    assert_eq!(Solution::character_replacement("ABCCCCABD".to_string(), 2), 6);
     assert_eq!(Solution::character_replacement("AABABBA".to_string(), 1), 4);
 }
